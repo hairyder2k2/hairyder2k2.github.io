@@ -18,7 +18,7 @@
         }
         body, html {
             height: 100%;
-            background-color: #ffffff; /* Nền trắng tinh khiết */
+            background-color: #ffffff;
             font-family: 'Inter', sans-serif;
             color: #111111;
             overflow-x: hidden;
@@ -71,7 +71,7 @@
             transition: color 0.3s ease;
         }
         .nav-menu li.active a, .nav-menu a:hover {
-            color: #111111; /* Chuyển màu đen khi hover */
+            color: #111111;
         }
         .sidebar-footer {
             font-size: 11px;
@@ -96,7 +96,6 @@
             padding: 0 100px 0 40px;
             scroll-behavior: smooth;
         }
-        /* Ẩn thanh cuộn mặc định để nhìn web sạch sẽ hơn */
         .gallery-container::-webkit-scrollbar {
             display: none;
         }
@@ -104,18 +103,16 @@
         /* ĐỊNH DẠNG TỪNG KHỐI ẢNH */
         .image-block {
             display: inline-block;
-            height: 75vh; /* Chiều cao ảnh chiếm 75% màn hình */
-            margin-right: 80px; /* Khoảng cách trắng sang trọng giữa các bức ảnh */
+            height: 75vh;
+            margin-right: 80px;
             vertical-align: middle;
-            flex-shrink: 0; /* KHÔNG CHO TRÌNH DUYỆT BÓP NHỎ ẢNH (THÊM DÒNG NÀY) */
-        }
+            flex-shrink: 0;
         }
         .image-block img {
             height: 100%;
             width: auto;
             object-fit: contain;
         }
-        /* Dòng chú thích nhỏ dưới ảnh */
         .image-caption {
             font-size: 10px;
             color: #777777;
@@ -124,7 +121,7 @@
             text-transform: uppercase;
         }
 
-        /* GIAO DIỆN DI ĐỘNG (TỰ ĐỘNG ĐỔI THÀNH CUỘN DỌC TRÊN ĐIỆN THOẠI) */
+        /* GIAO DIỆN DI ĐỘNG */
         @media (max-width: 991px) {
             body, html {
                 overflow-y: auto;
@@ -173,12 +170,13 @@
             <h1>Hai Nguyen</h1> 
             <p>Lookbook & Fashion Photography</p>
             
-           <ul class="nav-menu">
-    <li class="active"><a href="index.html">Lookbook</a></li>
-    <li><a href="editorial.html">Editorial</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-</ul>
+            <ul class="nav-menu">
+                <li class="active"><a href="index.html">Lookbook</a></li>
+                <li><a href="editorial.html">Editorial</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
         
         <div class="sidebar-footer">
             <p>&copy; 2026. Portfolio.</p>
@@ -215,10 +213,10 @@
         if (window.innerWidth > 991) {
             window.addEventListener('wheel', (evt) => {
                 if (evt.deltaY !== 0) {
-                    evt.preventDefault(); // Ngăn cuộn dọc mặc định của trình duyệt
-                    gallery.scrollLeft += evt.deltaY; // Chuyển thành cuộn ngang mượt mà
+                    evt.preventDefault();
+                    gallery.scrollLeft += evt.deltaY;
                 }
-            }, { passive: false }); // Bắt buộc phải có để các trình duyệt mới không chặn cuộn mượt
+            }, { passive: false });
         }
     </script>
 </body>

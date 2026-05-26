@@ -88,15 +88,13 @@
         .gallery-container {
             margin-left: 320px;
             height: 100vh;
-            display: flex;
-            align-items: center;
+            display: block; /* Đã gỡ lệnh flex gây lỗi bóp ảnh */
             overflow-x: auto;
             overflow-y: hidden;
             white-space: nowrap;
-            padding: 0 100px 0 40px;
+            padding: 12.5vh 100px 0 40px; /* Đẩy ảnh xuống căn giữa trục dọc hoàn hảo */
             scroll-behavior: smooth;
         }
-        /* Ẩn thanh cuộn mặc định để nhìn web sạch sẽ hơn */
         .gallery-container::-webkit-scrollbar {
             display: none;
         }
@@ -104,13 +102,14 @@
         /* ĐỊNH DẠNG TỪNG KHỐI ẢNH */
         .image-block {
             display: inline-block;
-            height: 75vh; /* Chiều cao ảnh chiếm 75% màn hình */
-            margin-right: 80px; /* Khoảng cách trắng sang trọng giữa các bức ảnh */
+            height: 75vh;
+            margin-right: 80px;
             vertical-align: middle;
         }
         .image-block img {
             height: 100%;
             width: auto;
+            max-width: none; /* Lệnh thép: Cấm mọi trình duyệt bóp nhỏ chiều rộng ảnh */
             object-fit: contain;
         }
         /* Dòng chú thích nhỏ dưới ảnh */

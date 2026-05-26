@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hai Nguyen | Lookbook Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* THIẾT LẬP CƠ BẢN */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            height: 100%;
+            background-color: #ffffff; /* Nền trắng tinh khiết */
+            font-family: 'Inter', sans-serif;
+            color: #111111;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* THANH MENU CỐ ĐỊNH BÊN TRÁI (SIDEBAR) */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 320px;
+            height: 100%;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #ffffff;
+            z-index: 100;
+        }
+        .logo-area h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 32px;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            color: #000000;
+        }
+        .logo-area p {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888888;
+        }
+        .nav-menu {
+            list-style: none;
+            margin-top: 60px;
+        }
+        .nav-menu li {
+            margin-bottom: 20px;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: #aaaaaa;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        .nav-menu li.active a, .nav-menu a:hover {
+            color: #111111; /* Chuyển màu đen khi hover */
+        }
+        .sidebar-footer {
+            font-size: 11px;
+            color: #999999;
+            letter-spacing: 0.5px;
+            line-height: 1.6;
+        }
+        .sidebar-footer a {
+            color: #111111;
+            text-decoration: none;
+        }
+
+        /* KHU VỰC CUỘN NGANG CHỨA ẢNH (GALLERY) */
+        .gallery-container {
+            margin-left: 320px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            padding: 0 100px 0 40px;
+            scroll-behavior: smooth;
+        }
+        /* Ẩn thanh cuộn mặc định để nhìn web sạch sẽ hơn */
+        .gallery-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* ĐỊNH DẠNG TỪNG KHỐI ẢNH */
+        .image-block {
+            display: inline-block;
+            height: 75vh; /* Chiều cao ảnh chiếm 75% màn hình */
+            margin-right: 80px; /* Khoảng cách trắng sang trọng giữa các bức ảnh */
+            vertical-align: middle;
+        }
+        .image-block img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+        /* Dòng chú thích nhỏ dưới ảnh */
+        .image-caption {
+            font-size: 10px;
+            color: #777777;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* GIAO DIỆN DI ĐỘNG (TỰ ĐỘNG ĐỔI THÀNH CUỘN DỌC TRÊN ĐIỆN THOẠI) */
+        @media (max-width: 991px) {
+            body, html {
+                overflow-y: auto;
+            }
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 40px 24px 10px 24px;
+            }
+            .nav-menu {
+                margin-top: 30px;
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .nav-menu li {
+                margin-bottom: 0;
+            }
+            .gallery-container {
+                margin-left: 0;
+                height: auto;
+                display: block;
+                white-space: normal;
+                padding: 20px 24px 60px 24px;
+                overflow-x: hidden;
+            }
+            .image-block {
+                display: block;
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 50px;
+            }
+            .image-block img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo-area">
+            <h1>Hai Nguyen</h1> 
+            <p>Lookbook & Fashion Photography</p>
+            
+            <ul class="nav-menu">
+                <li class="active"><a href="#">Lookbook</a></li>
+                <li><a href="#">Editorial</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="sidebar-footer">
+            <p>&copy; 2026. Portfolio.</p>
+            <p>Instagram: <a href="https://instagram.com/hai.nguyen.photo" target="_blank">@hai.nguyen.photo</a></p>
+        </div>
+    </div>
+
+    <div class="gallery-container" id="gallery">
+        
+        <div class="image-block">
+            <img src="lookbook1.jpg" alt="Lookbook 1">
+            <div class="image-caption">Summer Collection — Look 01</div>
+        </div>
+
+        <div class="image-block">
+            <img src="lookbook2.jpg" alt="Lookbook 2">
+            <div class="image-caption">Summer Collection — Look 02</div>
+        </div>
+
+        <div class="image-block">
+            <img src="lookbook3.jpg" alt="Lookbook 3">
+            <div class="image-caption">Minimal Vibe — Look 03</div>
+        </div>
+
+        <div class="image-block">
+            <img src="lookbook4.jpg" alt="Lookbook 4">
+            <div class="image-caption">The Muse — Look 04</div>
+        </div>
+
+    </div>
+
+    <script>
+        const gallery = document.getElementById('gallery');
+        if (window.innerWidth > 991) {
+            window.addEventListener('wheel', (evt) => {
+                if (evt.deltaY !== 0) {
+                    evt.preventDefault(); // Ngăn cuộn dọc mặc định của trình duyệt
+                    gallery.scrollLeft += evt.deltaY; // Chuyển thành cuộn ngang mượt mà
+                }
+            }, { passive: false }); // Bắt buộc phải có để các trình duyệt mới không chặn cuộn mượt
+        }
+    </script>
+</body>
+</html>
